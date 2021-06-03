@@ -1,0 +1,27 @@
+<div class="main">
+  <div class="container">
+    <span class="title"> Date : </span>
+    <input type="date" [ngModel]="selectedDate" (ngModelChange)="selectedDate = $event" class="input-data" />
+  </div>
+  <div style="margin-bottom: 20px;">
+    <span class="title">Base : </span>
+    <select [(ngModel)]="selectedBaseCurrency" class="select-choice">
+      <option *ngFor="let currency of baseCurrencies" [ngValue]="currency">{{currency}}</option>
+    </select>
+  </div>
+  <div class="text-center">
+    <button (click)="refreshRates()" class="btn">Refresh Rates </button>
+  </div>
+  <div *ngIf="currencyList$ | async as currencyList">
+    <div *ngIf="(currencyList.exchange_rates |json) !== '{}'; else loggedOut">
+      <div class="text-center">
+        <p class="currency-list">Exchange Rates:</p>
+      </div>
+    </div>
+    <div *ngFor="let item of currencyList.exchange_rates | keyvalue" style="text-align: center;margin-bottom: 5px;">
+      {{selectedBaseCurrency}}/{{item.key}} = {{item.value}}</div>
+  </div>
+  <ng-template #loggedOut>
+    <p class="error-msg"> Error fetching data!</p>
+  </ng-template>
+</div>

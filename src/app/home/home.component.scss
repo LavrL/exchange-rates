@@ -1,0 +1,53 @@
+.main {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+}
+.container {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 280px;
+}
+.title {
+  font-size: 18px;
+}
+.text-center {
+  text-align: center;
+}
+
+.select-choice {
+  padding: 5px;
+  border-radius: 5px;
+}
+.currency-list {
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+a {
+  text-decoration: none;
+}
+.input-data {
+  border-radius: 20px;
+  padding: 10px;
+  outline: none;
+}
+.btn {
+  background-color: #555555; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  outline: none;
+}
+.error-msg {
+  color: red;
+  font-size: 16px;
+  text-align: center;
+}
