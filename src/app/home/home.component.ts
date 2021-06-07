@@ -22,6 +22,14 @@ export class HomeComponent implements OnInit {
     this.currencyList$ = this.http.getCurrenciesList(this.selectedDate, this.selectedBaseCurrency);
   }
 
+  onCurrencySelected(value) {
+    this.selectedBaseCurrency = value;
+  }
+
+  onDateSelected(value) {
+    this.selectedDate = value;
+  }
+
   refreshCurrencies(): void {
     this.currencyList$ = this.http.getCurrenciesList(this.selectedDate, this.selectedBaseCurrency);
   }

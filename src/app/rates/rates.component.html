@@ -1,14 +1,6 @@
 <div class="main">
-  <div class="container">
-    <span class="title"> Date : </span>
-    <input type="date" [ngModel]="selectedDate" (ngModelChange)="selectedDate = $event" class="input-data" />
-  </div>
-  <div style="margin-bottom: 20px;">
-    <span class="title">Base : </span>
-    <select [(ngModel)]="selectedBaseCurrency" class="select-choice">
-      <option *ngFor="let currency of baseCurrencies" [ngValue]="currency">{{currency}}</option>
-    </select>
-  </div>
+  <selectdata (currencySelected)="onCurrencySelected($event)" (dateSelected)="onDateSelected($event)" ></selectdata>
+
   <div class="text-center">
     <button (click)="refreshRates()" class="btn">Refresh Rates </button>
   </div>

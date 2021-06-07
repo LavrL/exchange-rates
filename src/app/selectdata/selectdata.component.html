@@ -1,0 +1,10 @@
+<div class="container">
+  <span class="title"> Date : </span>
+  <input type="date" [ngModel]="selectedDate" (ngModelChange)="dateSelected.emit($event)" class="input-data" />
+</div>
+<div style="margin-bottom: 20px;">
+  <span class="title">Base : </span>
+  <select [ngModel]="selectedBaseCurrency" (ngModelChange)="currencySelected.emit($event)" class="select-choice">
+    <option *ngFor="let currency of baseCurrencies" [ngValue]="currency">{{currency}}</option>
+  </select>
+</div>

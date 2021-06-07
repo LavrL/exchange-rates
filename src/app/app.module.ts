@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoaderComponent } from './loader/loader.component';
+import { SelectdataComponent } from './selectdata/selectdata.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoaderComponent } from './loader/loader.component';
     HomeComponent,
     RatesComponent,
     HeaderComponent,
-    LoaderComponent
+    LoaderComponent,
+    SelectdataComponent
   ],
   imports: [
     BrowserModule,

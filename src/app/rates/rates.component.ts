@@ -23,4 +23,12 @@ export class RatesComponent implements OnInit {
   refreshRates(): void {
     this.currencyList$ = this.http.getCurrenciesList(this.selectedDate, this.selectedBaseCurrency);
   }
+
+  onCurrencySelected(value) {
+    this.selectedBaseCurrency = value;
+  }
+
+  onDateSelected(value) {
+    this.selectedDate = value;
+  }
 }
