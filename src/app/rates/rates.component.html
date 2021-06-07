@@ -12,7 +12,7 @@
   <div class="text-center">
     <button (click)="refreshRates()" class="btn">Refresh Rates </button>
   </div>
-  <div *ngIf="currencyList$ | async as currencyList">
+  <div *ngIf="currencyList$ | async as currencyList; else loader">
     <div *ngIf="(currencyList.exchange_rates |json) !== '{}'; else loggedOut">
       <div class="text-center">
         <p class="currency-list">Exchange Rates:</p>
@@ -25,3 +25,6 @@
     <p class="error-msg"> Error fetching data!</p>
   </ng-template>
 </div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

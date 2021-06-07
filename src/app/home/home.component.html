@@ -16,7 +16,7 @@
     <p class="currency-list">Available Currency List</p>
   </div>
 
-  <div *ngIf="currencyList$ | async as currencyList">
+  <div *ngIf="currencyList$ | async as currencyList; else loader">
     <div *ngIf="(currencyList.exchange_rates |json) !== '{}'; else loggedOut">
       <div *ngFor="let item of currencyList.exchange_rates | keyvalue" style="text-align: center;margin-bottom: 5px;">
         {{selectedBaseCurrency}}/{{item.key}}</div>
@@ -26,3 +26,6 @@
     <p class="error-msg"> Error fetching data!</p>
   </ng-template>
 </div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
